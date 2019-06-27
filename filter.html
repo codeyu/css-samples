@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <title>CSS3滤镜（filter）属性给图片添加特殊效果</title>
+    <meta name="description"
+        content="CSS3最强大的地方就在于以前很多需要借助专业软件完成的事情，它都能一行代码轻松实现，比如圆角矩形，阴影等。平时大家都习惯通过Photoshop等图片处理工具调整图片的亮度，灰度，对比度等效果 ..." />
+    <style>
+        .gaussian-blur{
+            filter:blur(2px);
+        }
+        .brightness{
+            filter:brightness(70%);
+        }
+    </style>
+    </head>
+
+<body>
+    <div id="all" class="textall">
+        <h1>CSS3基础<span>CSS3滤镜（filter）属性给图片添加特殊效果</span></h1>
+        <div id="top">
+            <div id="main">
+                <div id="content">
+                    <h2>CSS3滤镜（filter）属性给图片添加特殊效果</h2>
+                    <div id="article" class="num123">
+                        <p>CSS3最强大的地方就在于以前很多需要借助专业软件完成的事情，它都能一行代码轻松实现，比如圆角矩形，阴影等。平时大家都习惯通过Photoshop等图片处理工具调整图片的亮度，灰度，对比度等效果，而CSS3的滤镜属性，可以不用任何软件实现这些效果。本文就简单的说说关于CSS常用的图片滤镜的使用，本文使用的示例图原图如下：
+                        </p>
+                        <p><img src="images/girl.png" title="" alt="my.png" /></p>
+                        <p>给图片添加高斯模糊滤镜：<br /></p>
+                        <pre>img&nbsp;{filter:blur(2px);}&nbsp;/*-这里的数值表示模糊的程度-*/}</pre>
+                        <p><img class="gaussian-blur" src="images/girl.png" title="" alt="CSS图片高斯模糊.png" /></p>
+                        <p>设置亮度调节滤镜，使图片变暗：<br /></p>
+                        <pre>img&nbsp;{filter:brightness(70%);}&nbsp;/*-如果超过100%，则图片会更亮-*/}</pre>
+                        <p><img class="brightness" src="images/girl.png" title="" alt="CSS图片变暗.png" /></p>
+                        <p>设置对比度滤镜，使图片色彩对比度更明显：<br /></p>
+                        <pre>img&nbsp;{filter:contrast(140%);}&nbsp;/*-100%表示无变化-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片对比度.png" /></p>
+                        <p>设置灰度滤镜，使图片变成黑白：<br /></p>
+                        <pre>img&nbsp;{filter:grayscale(100%);}&nbsp;/*-100%表示完全灰色，0%表示无变化-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片黑白.png" /></p>
+                        <p>设置图片色相旋转滤镜，改变图片中的色相：<br /></p>
+                        <pre>img&nbsp;{filter:hue-rotate(150deg);&nbsp;/*-可设置0~360度改变图片色相-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片色相.png" /></p>
+                        <p>设置图片反向滤镜，实现底片效果：</p>
+                        <pre>img&nbsp;{filter:invert(60%);&nbsp;/*-可改变百分比值设置反向的程度-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片底片.png" /></p>
+                        <p>设置图片饱和度滤镜，调整图片的饱和度：<br /></p>
+                        <pre>img&nbsp;{filter:saturate(35%);&nbsp;/*-100%表示图片原饱和度-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片饱和度.png" /></p>
+                        <p>设置图片深褐色滤镜，将图片变成老照片的效果：<br /></p>
+                        <pre>img&nbsp;{filter:sepia(60%);&nbsp;/*-百分比值越大，深褐色效果越明显-*/}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片老照片效果.png" /></p>
+                        <p>此外，CSS滤镜filter属性还可以设置阴影和透明度，它与CSS3的阴影属性和透明度属性效果相似，但略有差别，例如：</p>
+                        <p>给图片设置阴影的滤镜：</p>
+                        <pre>img&nbsp;{filter:drop-shadow(5px&nbsp;5px&nbsp;10px&nbsp;#000);}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片阴影滤镜.png" /></p>
+                        <p>而如果通过块阴影属性来设置，阴影显示的有所差别：</p>
+                        <pre>img&nbsp;{box-shadow:&nbsp;5px&nbsp;5px&nbsp;10px&nbsp;#000;}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片阴影.png" /></p>
+                        <p>给图片设置透明度滤镜：</p>
+                        <pre>img&nbsp;{filter:opacity(50%);}</pre>
+                        <p><img src="images/girl.png" title="" alt="CSS图片透明滤镜.png" /></p>
+                        <p>此时图片显示的效果与设置透明度属性“opacity:0.5”的效果几乎相同，不同之处在于通过filter属性，有些浏览器为了提升性能会提供硬件加速。</p> <em
+                            class="mystyle"></em>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+</body>
+
+</html>
