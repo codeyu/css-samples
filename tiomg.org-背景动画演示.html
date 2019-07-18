@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <title>HTML5 Canvas背景动画演示 - 太美技术 tiomg.org</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <script src="https://www.tiomg.org/page/resource/front-v1.2/assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="https://pgr.tiomg.org/page/resource/front-v1.2/assets/vendor/jquery-migrate/dist/jquery-migrate.min.js"></script>
+  <script src="https://www.tiomg.org/page/resource/particleground/jquery.particleground.min.js"></script>
+</head>
+
+<body style="margin: 0px 0px;">
+
+  <div style="background: #4178be; position: relative;">
+    <div id="bgc" style=" width: 100%; height: 100%; position: absolute;"></div>
+
+    <div style="position: relative;">
+      <p>&nbsp;</p>
+
+      <div style="text-align: center; color: #fff;">
+        <div>
+          <h1>
+            <span style="font-size: 60px;">tiomg.org 背景动画演示</span>
+          </h1>
+        </div>
+      </div>
+
+      <div style="text-align: center; color: #fff;">
+        <span class="d-block text-white">HTML5 Canvas背景动画演示</span>
+      </div>
+      <div style="text-align: center; color: #fff;">
+        了解更多，点击<a href="https://www.tiomg.org/blog?uuid=b0f6ae7a-0d67-481d-9f95-0ba9b4f525b1" target="_blank"> tiomg.org 官方博客</a>，也可以加QQ群：109842732交流。
+      </div>
+      <p>&nbsp;</p>
+    </div>
+  </div>
+
+  <p style="text-align: center; color: #4178be;">
+    了解更多，点击<a href="https://www.tiomg.org/blog?uuid=b0f6ae7a-0d67-481d-9f95-0ba9b4f525b1" target="_blank"> tiomg.org 官方博客</a>，也可以加QQ群：109842732 交流。
+  </p>
+
+  <script>
+    $(document).on('ready', function() {
+      $('#bgc').particleground({dotColor: '#f0f0f0', lineColor: '#f0f0f0', parallax: false});
+    });
+  </script>
+</body>
+</html>
