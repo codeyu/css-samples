@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>两边渐小的轮播图</title>
+
+    <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
+    <style type="text/css">
+        #banner {
+            margin: 100px auto 0;
+        }
+
+        .swiper-slide {
+            width: 600px;
+            height: 450px;
+        }
+
+        .banner_page {
+            margin: 20px auto;
+            left: 0;
+            right: 0;
+        }
+
+        .banner_page span {
+            margin: 0 10px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .swiper-pagination-bullet-active {
+            width: 16px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>两边渐小的轮播图-拖拽轮播切换</h2>
+    <div class="swiper-container swiper-container-initialized swiper-container-horizontal" id="banner">
+        <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4156px, 0px, 0px);">
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
+                style="transform: translateX(9667.2px) scale(-0.6); z-index: 919; opacity: 0; transition-duration: 0ms;">
+                <img src="images/1.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"
+                style="transform: translateX(7568.4px) scale(-0.4); z-index: 929; opacity: 0; transition-duration: 0ms;">
+                <img src="images/2.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2"
+                style="transform: translateX(5724px) scale(-0.2); z-index: 939; opacity: 0; transition-duration: 0ms;">
+                <img src="images/3.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3"
+                style="transform: translateX(4134px) scale(0); z-index: 949; opacity: 0; transition-duration: 0ms;">
+                <img src="images/4.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4"
+                style="transform: translateX(2798.4px) scale(0.2); z-index: 959; opacity: 0; transition-duration: 0ms;">
+                <img src="images/5.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide" data-swiper-slide-index="0"
+                style="transform: translateX(1717.2px) scale(0.4); z-index: 969; opacity: 1; transition-duration: 0ms;">
+                <img src="images/6.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide" data-swiper-slide-index="1"
+                style="transform: translateX(890.4px) scale(0.6); z-index: 979; opacity: 1; transition-duration: 0ms;">
+                <img src="images/7.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="2"
+                style="transform: translateX(445.2px) scale(0.8); z-index: 989; opacity: 1; transition-duration: 0ms;">
+                <img src="images/8.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="3"
+                style="transform: translateX(0px) scale(1); z-index: 999; opacity: 1; transition-duration: 0ms;">
+                <img src="images/1.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="4"
+                style="transform: translateX(-445.2px) scale(0.8); z-index: 989; opacity: 1; transition-duration: 0ms;">
+                <img src="images/2.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
+                style="transform: translateX(-890.4px) scale(0.6); z-index: 979; opacity: 1; transition-duration: 0ms;">
+                <img src="images/3.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"
+                style="transform: translateX(-1717.2px) scale(0.4); z-index: 969; opacity: 1; transition-duration: 0ms;">
+                <img src="images/4.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="2"
+                style="transform: translateX(-2798.4px) scale(0.2); z-index: 959; opacity: 0; transition-duration: 0ms;">
+                <img src="images/5.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="3"
+                style="transform: translateX(-4134px) scale(0); z-index: 949; opacity: 0; transition-duration: 0ms;">
+                <img src="images/6.jpg" alt="轮播图">
+            </div>
+            <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="4"
+                style="transform: translateX(-5724px) scale(-0.2); z-index: 939; opacity: 0; transition-duration: 0ms;">
+                <img src="images/7.jpg" alt="轮播图">
+            </div>
+        </div>
+        <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+    <div class="swiper-pagination banner_page swiper-pagination-clickable swiper-pagination-bullets"><span
+            class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span
+            class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span
+            class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span
+            class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button"
+            aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button"
+            aria-label="Go to slide 5"></span></div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            var mySwiper = new Swiper("#banner", {
+                loop: true,
+                loopedSlides: 5,
+                slidesPerView: 'auto',
+                autoplay: true,
+                centeredSlides: true,
+                initialSlide: 2,
+                watchSlidesProgress: true,
+                pagination: {
+                    el: '.banner_page',
+                    clickable: true,
+                },
+                on: {
+                    progress: function (progress) {
+                        for (i = 0; i < this.slides.length; i++) {
+                            var slide = this.slides.eq(i);
+                            var slideProgress = this.slides[i].progress;
+                            if (Math.abs(slideProgress) > 1) {
+                                var modify = (Math.abs(slideProgress) - 1) * 0.4 + 1;
+                            }
+                            translate = slideProgress * modify * 318 + 'px';
+                            scale = 1 - Math.abs(slideProgress) / 5;
+                            zIndex = 999 - Math.abs(Math.round(10 * slideProgress));
+                            slide.transform('translateX(' + translate + ') scale(' + scale + ')');
+                            slide.css('zIndex', zIndex);
+                            slide.css('opacity', 1);
+                            if (Math.abs(slideProgress) > 3) {
+                                slide.css('opacity', 0);
+                            }
+                        }
+                    },
+                    setTransition: function (transition) {
+                        for (var i = 0; i < this.slides.length; i++) {
+                            var slide = this.slides.eq(i)
+                            slide.transition(transition);
+                        }
+
+                    }
+                }
+            })
+        })
+    </script>
+
+
+</body>
+
+</html>
