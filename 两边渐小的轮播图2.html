@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+        <title>有趣的Swiper轮播效果图</title>
+        <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.min.css" rel="stylesheet">
+        <style>
+            /*团队*/
+            .sblockWrap{
+                width: 100%;
+                overflow: hidden;
+                margin-top: 50px;
+            }               
+            .feedBack-wrap {
+                position: relative;
+                margin-bottom: 40px;
+            }       
+            .feedBack-swiper {
+                width: 1200px;
+                margin: 0 auto;
+                cursor: pointer;
+            }           
+            .feedBack-swiper .swiper-slide {
+                width: 680px;
+                padding: 15px 0;
+                background-color: #fff;
+                opacity: .7;
+                transform: scale(0.8);
+                -webkit-transform: scale(0.8);
+                -moz-transform: scale(0.8);
+                -webkit-transition: transform 1.0s;
+                -moz-transition: transform 1.0s;
+            }       
+            .feedBack-swiper .swiper-slide-active {
+                transform: scale(1);
+                opacity: 1;
+                z-index: 10;
+            }           
+            .feedBack-wrap .swiper-container .swiper-slide.swiper-slide-prev {
+                transform: scale(0.8) translateX(580px);
+            }           
+            .feedBack-wrap .swiper-container .swiper-slide.swiper-slide-next {
+                transform: scale(0.8) translateX(-580px);
+            }           
+            .gp-item {
+                width: 100%;
+                height: 640px;
+                text-align: center;
+                margin: 0 auto;
+                box-shadow: rgba(50, 50, 50, 0.4) 0 0 20px;
+                border-radius: 15px;
+            }       
+            .gp-item .gp-head {
+                margin: 38px auto 26px;
+            }       
+            .gp-item .gp-name {
+                font-size: 24px;
+                color: #333;
+            }       
+            .gp-item .gp-title {
+                font-size: 16px;
+                color: #767676;
+                line-height: 40px;
+            }       
+            .gp-item .gp-exp {
+                font-size: 16px;
+                color: #767676;
+                line-height: 28px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="sblockWrap feedBack-wrap">
+            <div class="swiper-container feedBack-swiper" id="groupSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gp-item">
+                            <dl>
+                                <dt><img src="images/1.jpg" alt="胡磊" class="gp-head" /></dt>
+                                <dd class="gp-name">胡磊·Henry</dd>
+                                <dd class="gp-title">八斗猫联合创始人兼CEO</dd>
+                                <dd class="gp-exp">原智联卓聘创始团队B端用户市场、运营&商业化营销负责人</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gp-item">
+                            <dl>
+                                <dt><img src="images/2.jpg" alt="黄小平" class="gp-head" /></dt>
+                                <dd class="gp-name">黄小平·Steven</dd>
+                                <dd class="gp-title">八斗猫联合创始人、锐仕方达创始人兼董事长</dd>
+                                <dd class="gp-exp">中国猎头行业领军人物</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gp-item">
+                            <dl>
+                                <dt><img src="images/3.jpg" alt="陈建文" class="gp-head" /></dt>
+                                <dd class="gp-name">陈建文·James</dd>
+                                <dd class="gp-title">八斗猫联合创始人、EasyAI创始人兼董事长</dd>
+                                <dd class="gp-exp">清华电子工程系博士、中组部“青年千人计划”专家</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+    <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            var feedBackSwiper = new Swiper('#groupSwiper', {
+                autoplay: 1200,
+                spaceBetween: 0,
+                autoplayDisableOnInteraction: false,
+                loop: true,
+                slidesPerView: 'auto',
+                centeredSlides: true,
+                loopedSlides: 3,
+                slideToClickedSlide: true,
+                followFinger: false
+            });
+
+            $('.feedBack-wrap').mouseenter(function() {
+                feedBackSwiper.stopAutoplay();
+            });
+            $('.feedBack-wrap').mouseleave(function() {
+                feedBackSwiper.startAutoplay();
+            });
+
+        })
+    </script>
+
+</html>
