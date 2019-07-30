@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>原生JS图片轮播</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 520px;
+            height: 280px;
+            margin: 100px auto 0;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 15px black;
+            
+        }
+        #box img{
+                width:100%;
+                height: 100%;
+        }
+        ul {
+            width: 400%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        li {
+            width: auto;
+            display: block;
+            float: left;
+        }
+
+        #btnBox {
+            width: 360px;
+            height: 30px;
+            margin: 50px auto 0;
+        }
+
+        .btn {
+            display: block;
+            width: 80px;
+            height: 30px;
+            margin: 0 50px;
+            background: peru;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            float: left;
+            cursor: pointer;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li><img src="images/1.jpg" /></li>
+            <li><img src="images/2.jpg" /></li>
+            <li><img src="images/3.jpg" /></li>
+            <li><img src="images/4.jpg" /></li>
+        </ul>
+    </div>
+    <div id="btnBox">
+        <span class="btn" onclick="btnRight()">向左滚</span>
+        <span class="btn" onclick="btnLeft()">向右滚</span>
+    </div>
+</body>
+<script>
+    var moveAnimationTime,
+        moveIng = false,
+        box = document.getElementById("box"),
+        ul = box.getElementsByTagName("ul")[0],
+        liList = ul.getElementsByTagName("li"),
+        liLength = liList.length,
+        onceMaxLeft = boxWidth = box.clientWidth;//这里一次定义了 moveAnimationTime，moveIng，box，ul，liList，liLength，onceMaxLeft 等全局变量
+
+    function moveAnimation(callBack) {//callBack是回调函数
+        if (moveIng) return false;
+        moveIng = true;
+        var moveInterval,
+            name = callBack.name;
+        if (name == "moveItemRight") {
+            var moveS = 0;
+            moveInterval = setInterval(function () {
+                moveS -= 20;
+                ul.style.left = moveS + "px";
+                if (Math.abs(moveS) === onceMaxLeft) {
+                    clearInterval(moveInterval);
+                    callBack();//调用回调函数
+                    moveIng = false;
+                };
+            }, 20);
+        } else {
+            var moveS = boxWidth * (-1),
+                li = liList[3];
+            ul.insertBefore(li, liList[0]);
+            ul.style.left = "-" + boxWidth + "px";
+            moveInterval = setInterval(function () {
+                moveS += 20;
+                ul.style.left = moveS + "px";
+                if (moveS >= 0) {
+                    clearInterval(moveInterval);
+                    callBack();
+                    moveIng = false;
+                };
+            }, 20);
+        };
+    };
+
+    function moveItemRight() {
+        var li = liList[0];
+        ul.appendChild(li);
+        ul.style.left = "0px";
+        moveAnimationTime = setTimeout(function () {
+            moveAnimation(moveItemRight);
+        }, 3000);
+    };
+
+    function moveItemLeft() {
+        moveAnimationTime = setTimeout(function () {
+            moveAnimation(moveItemLeft);
+        }, 3000);
+    };
+
+    function btnLeft() {
+        if (moveAnimationTime) clearTimeout(moveAnimationTime);//moveAnimationTime 有值就是true 否则就是false
+        moveAnimation(moveItemLeft);
+    };
+
+    function btnRight() {
+        if (moveAnimationTime) clearTimeout(moveAnimationTime);
+        moveAnimation(moveItemRight);
+    };
+    moveAnimationTime = setTimeout(function () {
+        moveAnimation(moveItemRight);
+    }, 2000);
+</script>
+
+</html>
